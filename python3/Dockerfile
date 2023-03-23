@@ -5,7 +5,7 @@ FROM ubuntu:18.04
 # RUN sed -i s/archive.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list
 RUN apt-get update && apt-get install -y software-properties-common \
   && add-apt-repository -y ppa:deadsnakes/ppa \
-  && apt-get purge python* \
+  && apt-get purge python* -y \
   && apt autoremove -y \
   && apt-get update \
   && apt-get install -y python3.7 python3-pip \
